@@ -8,7 +8,6 @@ function countStudents(file) {
     const data = fs.readFileSync(file, 'utf-8')
     data.split('\n').forEach(line => {
       const field = line.split(',')[3]
-      console.log(line)
         if (field === 'CS') {
           cs.push(line.split(',')[0])
         }  else if (field === 'SWE') {
