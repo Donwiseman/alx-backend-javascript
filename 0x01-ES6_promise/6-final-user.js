@@ -8,10 +8,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled(promises).then((result) => {
     const processedResult = result.map((obj) => {
       if (obj.status === 'fulfilled') {
-        return {status: obj.status, value: obj.value};
-      } else {
-        return {status: obj.status, value: obj.reason};
+        return { status: obj.status, value: obj.value };
       }
+      return { status: obj.status, value: obj.reason };
     });
     console.log(processedResult);
     return processedResult;
