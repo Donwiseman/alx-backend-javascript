@@ -10,9 +10,8 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       if (obj.status === 'fulfilled') {
         return { status: obj.status, value: obj.value };
       }
-      return { status: obj.status, value: obj.reason };
+      return { status: obj.status, value: obj.reason.message };
     });
-    console.log(processedResult);
     return processedResult;
   });
 }
